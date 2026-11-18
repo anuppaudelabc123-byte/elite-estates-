@@ -3,38 +3,38 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Elite Estates | Luxury Real Estate</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Elite Estates | Luxury Properties Nepal</title>
 <style>
 *{box-sizing:border-box}
-body{margin:0;background:#0a0a0a;color:white;font-family:Arial,sans-serif}
+body{margin:0;background:#0b0b0b;color:white;font-family:Arial,sans-serif}
 header{padding:22px 6%;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;border-bottom:1px solid #c9a85c}
-.logo{font-size:24px;color:#d8b86a;font-weight:bold;letter-spacing:2px}
-nav a{color:white;text-decoration:none;margin:9px}
+.logo{font-size:25px;color:#d8b86a;font-weight:bold;letter-spacing:2px}
+nav a{color:white;text-decoration:none;margin:10px}
 .hero{text-align:center;padding:90px 15px;background:linear-gradient(#0009,#000b),url('https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=1400') center/cover}
 .hero h1{font-size:40px;color:#e0c276}
-.btn{display:inline-block;background:#c9a85c;color:#111;padding:13px 22px;text-decoration:none;font-weight:bold;border:0;border-radius:4px}
+.btn{display:inline-block;background:#c9a85c;color:#111;padding:14px 23px;text-decoration:none;font-weight:bold;border:0;border-radius:4px}
 section{padding:45px 6%}
 h2{text-align:center;color:#d8b86a}
-.filters{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;margin:25px}
-input,select{padding:13px;background:#191919;color:white;border:1px solid #c9a85c;border-radius:4px}
+.filters{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;margin:25px}
+input,select{padding:13px;background:#191919;color:white;border:1px solid #c9a85c;border-radius:4px;min-width:190px}
 .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:22px}
 .card{background:#171717;border:1px solid #66532e;border-radius:8px;overflow:hidden}
-.card img{width:100%;height:210px;object-fit:cover}
+.card img{width:100%;height:210px;object-fit:cover;display:block}
 .card-content{padding:18px}
 .card h3{color:#e0c276}
 .price{color:#d8b86a;font-weight:bold;font-size:19px}
 button{cursor:pointer}
-.card button{background:#c9a85c;padding:12px 20px;border:0;font-weight:bold}
+.details-btn{background:#c9a85c;color:#111;padding:12px 20px;border:0;font-weight:bold;border-radius:4px}
 .about,.contact{text-align:center;line-height:1.8}
 footer{text-align:center;padding:25px;background:#050505;color:#aaa}
-.modal{display:none;position:fixed;inset:0;background:#000e;z-index:9999;align-items:center;justify-content:center;padding:15px}
+.modal{display:none;position:fixed;inset:0;background:#000e;z-index:99999;align-items:center;justify-content:center;padding:15px}
 .modal-box{background:#171717;border:1px solid #c9a85c;border-radius:12px;max-width:450px;width:100%;overflow:hidden;text-align:center}
 .modal-box img{width:100%;height:230px;object-fit:cover}
 .modal-content{padding:20px}
 .modal-content h2{color:#d8b86a}
 .whatsapp{display:block;background:#c9a85c;color:#111;padding:14px;text-decoration:none;font-weight:bold;border-radius:4px}
-.close{margin-top:14px;padding:12px 25px;background:#444;color:white;border:0}
+.close{margin-top:14px;padding:12px 25px;background:#444;color:white;border:0;border-radius:4px}
 @media(max-width:600px){.hero h1{font-size:29px}header{justify-content:center;gap:15px}nav{text-align:center}}
 </style>
 </head>
@@ -76,7 +76,7 @@ footer{text-align:center;padding:25px;background:#050505;color:#aaa}
 <h3>Luxury Villa</h3>
 <p>Kathmandu, Nepal</p>
 <p class="price">NPR 3.5 Crore</p>
-<button onclick="showDetails(this)">View Details</button>
+<button class="details-btn" onclick="showDetails(this)">View Details</button>
 </div></div>
 
 <div class="card" data-name="Modern Apartment Pokhara" data-price="12000000">
@@ -85,7 +85,7 @@ footer{text-align:center;padding:25px;background:#050505;color:#aaa}
 <h3>Modern Apartment</h3>
 <p>Pokhara, Nepal</p>
 <p class="price">NPR 1.2 Crore</p>
-<button onclick="showDetails(this)">View Details</button>
+<button class="details-btn" onclick="showDetails(this)">View Details</button>
 </div></div>
 
 <div class="card" data-name="Premium House Lalitpur" data-price="8500000">
@@ -94,11 +94,11 @@ footer{text-align:center;padding:25px;background:#050505;color:#aaa}
 <h3>Premium House</h3>
 <p>Lalitpur, Nepal</p>
 <p class="price">NPR 85 Lakh</p>
-<button onclick="showDetails(this)">View Details</button>
+<button class="details-btn" onclick="showDetails(this)">View Details</button>
 </div></div>
 
 </div>
-<p id="noResults" style="display:none;text-align:center;color:#d8b86a">No properties found.</p>
+<p id="noResults" style="display:none;text-align:center">No properties found.</p>
 </section>
 
 <div class="modal" id="detailsModal">
@@ -108,7 +108,7 @@ footer{text-align:center;padding:25px;background:#050505;color:#aaa}
 <h2 id="detailName"></h2>
 <p id="detailLocation"></p>
 <h3 id="detailPrice" style="color:#d8b86a"></h3>
-<p>Contact us to arrange a property viewing.</p>
+<p>Contact Elite Estates for more property information.</p>
 <a id="whatsappLink" class="whatsapp" target="_blank">WhatsApp Inquiry</a>
 <button class="close" onclick="closeDetails()">Close</button>
 </div></div></div>
@@ -145,12 +145,15 @@ let name=card.dataset.name;
 let location=card.querySelector('.card-content p').textContent;
 let price=card.querySelector('.price').textContent;
 let photo=card.querySelector('img').src;
+
 document.getElementById('detailImage').src=photo;
 document.getElementById('detailName').textContent=name;
 document.getElementById('detailLocation').textContent='📍 '+location;
 document.getElementById('detailPrice').textContent=price;
+
 let message=encodeURIComponent('Hello Elite Estates! I am interested in '+name+'. Please provide more details.');
 document.getElementById('whatsappLink').href='https://wa.me/9779842944592?text='+message;
+
 document.getElementById('detailsModal').style.display='flex';
 }
 
