@@ -1,127 +1,29 @@
 
-<!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Elite Estates | Luxury Properties</title>
-<style>
-*{box-sizing:border-box}
-body{margin:0;background:#0b0b0b;color:#fff;font-family:Arial,sans-serif}
-header{padding:25px 7%;display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid #b99a55}
-.logo{font-size:25px;color:#d8b86a;font-weight:bold;letter-spacing:2px}
-nav a{color:white;text-decoration:none;margin-left:18px;font-size:14px}
-.hero{text-align:center;padding:85px 20px;background:linear-gradient(#0009,#000b),url('https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=1600&q=80') center/cover}
-.hero h1{font-size:42px;color:#e0c276;margin:0 0 15px}
-.hero p{color:#eee}
-.btn{display:inline-block;background:#c9a85c;color:#111;padding:13px 22px;text-decoration:none;border-radius:4px;font-weight:bold;margin-top:12px}
-section{padding:45px 7%}
-h2{text-align:center;color:#d8b86a;font-size:29px}
-.filters{display:flex;gap:10px;flex-wrap:wrap;justify-content:center;margin:25px 0}
-input,select{padding:13px;border:1px solid #b99a55;background:#171717;color:white;border-radius:4px;min-width:180px}
-.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:22px}
-.card{background:#171717;border:1px solid #544629;border-radius:8px;overflow:hidden}
-.card img{width:100%;height:190px;object-fit:cover}
-.card-content{padding:18px}
-.card h3{color:#e0c276;margin-top:0}
-.price{color:#d8b86a;font-weight:bold;font-size:19px}
-.card button{background:#c9a85c;border:0;padding:11px 16px;margin-top:10px;cursor:pointer;font-weight:bold}
-.about,.contact{text-align:center;line-height:1.8}
-footer{text-align:center;padding:25px;background:#050505;color:#aaa;border-top:1px solid #544629}
-</style>
-</head>
-<body>
-
-<header>
-<div class="logo">ELITE ESTATES</div>
-<nav>
-<a href="#home">Home</a>
-<a href="#properties">Properties</a>
-<a href="#about">About</a>
-<a href="#contact">Contact</a>
-</nav>
-</header>
-
-<div class="hero" id="home">
-<h1>Find Your Luxury Home</h1>
-<p>Discover premium properties. Experience exceptional living.</p>
-<a href="#properties" class="btn">Explore Properties</a>
-</div>
-
-<section id="properties">
-<h2>Our Exclusive Properties</h2>
-
-<div class="filters">
-<input id="search" type="text" placeholder="Search property..." oninput="filterHomes()">
-<select id="budget" onchange="filterHomes()">
-<option value="all">All Prices</option>
-<option value="10000000">Under 1 Crore</option>
-<option value="20000000">Under 2 Crore</option>
-<option value="50000000">Under 5 Crore</option>
-</select>
-</div>
-
-<div class="grid" id="propertyGrid">
-
-<div class="card" data-name="Luxury Villa Kathmandu" data-price="35000000">
-<img src="https://images.unsplash.com/photo-1613490493576-7fde63acd811?auto=format&fit=crop&w=900&q=80">
-<div class="card-content">
-<h3>Luxury Villa</h3>
-<p>Kathmandu, Nepal</p>
-<p class="price">NPR 3.5 Crore</p>
-<button onclick="details('Luxury Villa','Kathmandu, Nepal','NPR 3.5 Crore')">View Details</button>
-</div>
-</div>
-
-<div class="card" data-name="Modern Apartment Pokhara" data-price="12000000">
-<img src="https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?auto=format&fit=crop&w=900&q=80">
-<div class="card-content">
-<h3>Modern Apartment</h3>
-<p>Pokhara, Nepal</p>
-<p class="price">NPR 1.2 Crore</p>
-<button onclick="details('Modern Apartment','Pokhara, Nepal','NPR 1.2 Crore')">View Details</button>
-</div>
-</div>
-
-<div class="card" data-name="Premium House Lalitpur" data-price="8500000">
-<img src="https://images.unsplash.com/photo-1600566753086-00f18fb6b3ea?auto=format&fit=crop&w=900&q=80">
-<div class="card-content">
-<h3>Premium House</h3>
-<p>Lalitpur, Nepal</p>
-<p class="price">NPR 85 Lakh</p>
-<button onclick="details('Premium House','Lalitpur, Nepal','NPR 85 Lakh')">View Details</button>
-</div>
-</div>
-
-</div>
-</section>
-
-<section id="about" class="about">
-<h2>About Elite Estates</h2>
-<p>Elite Estates is dedicated to helping you discover exceptional properties and premium living spaces across Nepal. Your dream property starts here.</p>
-</section>
-
-<section id="contact" class="contact">
-<h2>Contact Us</h2>
-<p>Interested in buying or selling a property?</p>
-<a class="btn" href="https://wa.me/9779842944592" target="_blank">Chat on WhatsApp</a>
-</section>
-
-<footer>© 2026 Elite Estates. All Rights Reserved.</footer>
-
-<script>
-function filterHomes(){
-const search=document.getElementById('search').value.toLowerCase();
-const budget=document.getElementById('budget').value;
-document.querySelectorAll('.card').forEach(card=>{
-const name=card.dataset.name.toLowerCase();
-const price=Number(card.dataset.price);
-card.style.display=(name.includes(search)&&(budget==='all'||price<=Number(budget)))?'block':'none';
-});
-}
 function details(name,location,price){
-alert('Property: '+name+'\nLocation: '+location+'\nPrice: '+price+'\n\nFor more information, contact us on WhatsApp.');
+const card=[...document.querySelectorAll('.card')].find(c=>c.dataset.name===name);
+const photo=card?card.querySelector('img').src:'';
+const old=document.getElementById('propertyDetails');
+if(old) old.remove();
+
+const modal=document.createElement('div');
+modal.id='propertyDetails';
+modal.style.cssText='position:fixed;inset:0;background:#000d;z-index:9999;display:flex;align-items:center;justify-content:center;padding:20px;';
+
+const message=encodeURIComponent('Hello Elite Estates! I am interested in '+name+'. Please provide more details.');
+modal.innerHTML=`
+<div style="background:#171717;border:1px solid #c9a85c;border-radius:12px;max-width:450px;width:100%;overflow:hidden;color:white;text-align:center;">
+<img src="${photo}" style="width:100%;height:230px;object-fit:cover;">
+<div style="padding:22px;">
+<h2 style="color:#d8b86a;">${name}</h2>
+<p>📍 ${location}</p>
+<h3 style="color:#d8b86a;">${price}</h3>
+<p>Contact us for more information about this property.</p>
+<a href="https://wa.me/9779842944592?text=${message}" target="_blank" style="display:block;background:#c9a85c;color:#111;padding:14px;text-decoration:none;font-weight:bold;border-radius:5px;">WhatsApp Inquiry</a>
+<button id="closeDetails" style="margin-top:12px;padding:12px 25px;background:#333;color:white;border:1px solid #777;border-radius:5px;">Close</button>
+</div>
+</div>`;
+
+document.body.appendChild(modal);
+document.getElementById('closeDetails').onclick=()=>modal.remove();
+modal.onclick=(e)=>{if(e.target===modal)modal.remove();};
 }
-</script>
-</body>
-</html>
