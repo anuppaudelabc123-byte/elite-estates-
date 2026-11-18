@@ -4,161 +4,57 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="theme-color" content="#090909">
-<meta name="description" content="Discover luxury homes, villas, apartments and premium properties across Nepal with Elite Estates.">
-<title>Elite Estates | Luxury Real Estate Nepal</title>
-
+<title>Elite Estates | Luxury Properties</title>
+<meta name="description" content="Discover premium luxury homes and properties with Elite Estates Nepal.">
 <style>
-:root{
---gold:#d5b46b;
---dark:#090909;
---panel:#171717;
---muted:#aaa;
-}
-*{box-sizing:border-box}
-html{scroll-behavior:smooth}
-body{
-margin:0;background:var(--dark);color:white;
-font-family:Arial,Helvetica,sans-serif;
-}
-a{color:inherit}
-header{
-position:sticky;top:0;z-index:100;
-background:#090909f5;border-bottom:1px solid #554526;
-padding:18px 6%;display:flex;align-items:center;
-justify-content:space-between;gap:15px;
-}
-.logo{font-size:24px;color:var(--gold);font-weight:bold;letter-spacing:2px}
-nav{display:flex;gap:20px;flex-wrap:wrap}
-nav a{text-decoration:none;font-size:14px;color:#eee}
-nav a:hover{color:var(--gold)}
-.hero{
-min-height:470px;display:flex;align-items:center;
-justify-content:center;text-align:center;padding:70px 20px;
-background:linear-gradient(#0009,#000b),
-url('https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=1600') center/cover;
-}
-.hero-content{max-width:750px}
-.eyebrow{color:var(--gold);letter-spacing:4px;font-size:13px}
-.hero h1{font-size:clamp(36px,7vw,65px);margin:18px 0}
-.hero p{color:#ddd;line-height:1.8}
-.btn{
-display:inline-block;background:var(--gold);color:#111;
-padding:14px 23px;text-decoration:none;border:0;
-border-radius:4px;font-weight:bold;cursor:pointer;
-}
-.btn:hover{background:#f0d18a}
-section{padding:65px 6%}
-.section-title{text-align:center;margin-bottom:12px;color:var(--gold);font-size:32px}
-.section-subtitle{text-align:center;color:var(--muted);margin:0 auto 30px;line-height:1.7}
-.filters{
-display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));
-gap:12px;margin:28px 0;
-}
-input,select,textarea{
-width:100%;padding:13px;background:#191919;color:white;
-border:1px solid #67532e;border-radius:5px;font:inherit;
-}
-input::placeholder,textarea::placeholder{color:#aaa}
-input:focus,select:focus,textarea:focus{outline:1px solid var(--gold)}
-.results-line{color:var(--muted);margin-bottom:18px;font-size:14px}
-.grid{
-display:grid;grid-template-columns:repeat(auto-fit,minmax(255px,1fr));
-gap:22px;
-}
-.card{
-background:var(--panel);border:1px solid #493b22;
-border-radius:9px;overflow:hidden;transition:.25s;
-}
-.card:hover{transform:translateY(-5px);border-color:var(--gold)}
-.card-photo{position:relative}
-.card-photo img{width:100%;height:215px;object-fit:cover;display:block}
-.tag{
-position:absolute;top:12px;left:12px;
-background:var(--gold);color:#111;padding:7px 10px;
-font-size:11px;font-weight:bold;border-radius:3px;
-}
-.favorite{
-position:absolute;right:12px;top:10px;
-width:38px;height:38px;border:0;border-radius:50%;
-background:#111c;color:white;font-size:21px;cursor:pointer;
-}
-.favorite.active{color:#ff5b73}
-.card-content{padding:19px}
-.card-content h3{margin:0 0 10px;color:var(--gold);font-size:21px}
-.location{color:#bbb;font-size:14px}
-.price{color:var(--gold);font-size:20px;font-weight:bold;margin:15px 0}
-.meta{display:flex;gap:14px;flex-wrap:wrap;color:#ccc;font-size:13px;margin:15px 0}
-.card-actions{display:flex;gap:9px;flex-wrap:wrap}
-.card-actions button{flex:1}
-.outline{
-background:transparent;color:var(--gold);
-border:1px solid var(--gold);padding:12px;
-border-radius:4px;cursor:pointer;
-}
-.gold-button{
-background:var(--gold);color:#111;border:0;
-padding:12px;border-radius:4px;font-weight:bold;cursor:pointer;
-}
-.empty{text-align:center;color:var(--gold);padding:40px;display:none}
-.about{
-background:#121212;text-align:center;line-height:1.9;
-}
-.about-inner{max-width:800px;margin:auto}
-.stats{
-display:grid;grid-template-columns:repeat(auto-fit,minmax(130px,1fr));
-gap:15px;margin-top:35px;
-}
-.stat{border:1px solid #554526;padding:22px;border-radius:7px}
-.stat strong{display:block;color:var(--gold);font-size:27px}
-.contact-grid{
-display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
-gap:30px;max-width:950px;margin:auto;
-}
-.contact-info{line-height:2;color:#ccc}
-.contact-form{display:grid;gap:12px}
-textarea{min-height:110px;resize:vertical}
-footer{
-background:#050505;padding:30px 6%;text-align:center;
-color:#999;border-top:1px solid #554526;line-height:1.8;
-}
-footer strong{color:var(--gold)}
-.modal{
-display:none;position:fixed;inset:0;z-index:9999;
-background:#000e;align-items:center;justify-content:center;
-padding:15px;overflow-y:auto;
-}
-.modal-box{
-background:#171717;border:1px solid var(--gold);
-border-radius:10px;max-width:650px;width:100%;
-max-height:92vh;overflow-y:auto;
-}
-.modal-gallery img{
-width:100%;height:280px;object-fit:cover;display:block;
-}
-.gallery-controls{display:flex;justify-content:center;gap:12px;padding:12px}
-.modal-content{padding:22px}
-.modal-content h2{color:var(--gold);margin-top:0}
-.modal-content p{color:#ccc;line-height:1.7}
-.detail-meta{display:flex;gap:10px;flex-wrap:wrap;margin:15px 0}
-.detail-meta span{border:1px solid #554526;padding:9px;border-radius:4px;color:#ddd;font-size:13px}
-.modal-actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:20px}
-.modal-actions a,.modal-actions button{flex:1;text-align:center}
-.close-btn{
-background:#444;color:white;border:0;padding:13px 20px;
-border-radius:4px;cursor:pointer;
-}
-@media(max-width:600px){
-header{justify-content:center}
-nav{justify-content:center;gap:13px}
-.hero{min-height:400px}
-section{padding:45px 5%}
-.card-actions{flex-direction:column}
-.modal-gallery img{height:220px}
+:root{--gold:#d4af37;--black:#090909;--panel:#151515;--white:#f5f1e8}
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--black);color:var(--white);font-family:Arial,sans-serif}
+header{padding:18px 7%;display:flex;justify-content:space-between;align-items:center;background:#080808;position:sticky;top:0;z-index:10;border-bottom:1px solid #333}
+.logo{font-size:23px;font-weight:bold;color:var(--gold);letter-spacing:2px}
+nav a{color:white;text-decoration:none;margin-left:20px;font-size:14px}
+.hero{min-height:440px;padding:100px 7%;background:linear-gradient(90deg,#000d,#0005),url('https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=1600') center/cover;display:flex;flex-direction:column;justify-content:center}
+.hero h1{font-size:clamp(38px,6vw,65px);max-width:700px}
+.hero h1 span{color:var(--gold)}
+.hero p{margin:18px 0;color:#ddd;line-height:1.7}
+.btn{background:var(--gold);color:#111;padding:12px 20px;border:0;border-radius:3px;font-weight:bold;cursor:pointer;text-decoration:none;display:inline-block}
+.btn.dark{background:#242424;color:white;border:1px solid var(--gold)}
+section{padding:55px 7%}
+.heading{text-align:center;margin-bottom:30px}
+.heading h2{font-size:30px;color:var(--gold);margin-bottom:10px}
+.filters{display:grid;grid-template-columns:2fr 1fr 1fr 1fr 1fr;gap:10px;margin-bottom:25px}
+input,select,textarea{background:#171717;color:white;border:1px solid #444;padding:12px;width:100%;border-radius:3px}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:22px}
+.card{background:var(--panel);border:1px solid #292929;border-radius:5px;overflow:hidden}
+.card img{width:100%;height:210px;object-fit:cover}
+.card-body{padding:18px}
+.card h3{margin-bottom:8px}
+.muted{color:#aaa;font-size:13px}
+.price{color:var(--gold);font-size:20px;font-weight:bold;margin:12px 0}
+.actions{display:flex;gap:8px;flex-wrap:wrap}
+.actions button{flex:1}
+.heart{background:#292929;color:#fff;border:1px solid #555;padding:10px;cursor:pointer}
+.heart.active{color:#ff5268}
+.about{background:#111;text-align:center;line-height:1.8}
+.contact{max-width:600px;margin:auto}
+.contact input,.contact textarea{margin-bottom:12px}
+footer{text-align:center;padding:25px;background:#050505;color:#999;border-top:1px solid #333}
+.modal{display:none;position:fixed;inset:0;background:#000e;z-index:30;overflow:auto;padding:25px}
+.modal-box{max-width:750px;margin:30px auto;background:#151515;border:1px solid var(--gold);padding:20px;border-radius:5px}
+.modal-box img{width:100%;height:300px;object-fit:cover;margin:12px 0}
+.modal-top{display:flex;justify-content:space-between;align-items:center}
+.close{background:none;color:white;border:0;font-size:28px;cursor:pointer}
+.gallery-controls{display:flex;justify-content:space-between;gap:10px}
+.gallery-controls button{flex:1}
+@media(max-width:700px){
+header{padding:15px 5%;flex-wrap:wrap;gap:12px}
+nav a{margin-left:10px;font-size:12px}
+.filters{grid-template-columns:1fr 1fr}
+.hero{padding:75px 6%}
+section{padding:40px 5%}
 }
 </style>
 </head>
-
 <body>
 
 <header>
@@ -171,314 +67,244 @@ section{padding:45px 5%}
 </nav>
 </header>
 
-<main>
 <div class="hero" id="home">
-<div class="hero-content">
-<div class="eyebrow">PREMIUM REAL ESTATE NEPAL</div>
-<h1>Find Your Dream Property</h1>
-<p>Discover exceptional homes, luxury villas and premium properties. Experience a new standard of living with Elite Estates.</p>
-<a href="#properties" class="btn">Explore Properties</a>
-</div>
+<h1>Find Your <span>Dream Luxury</span> Home</h1>
+<p>Discover exceptional properties and experience a higher standard of living.</p>
+<a class="btn" href="#properties" style="width:max-content">Explore Properties</a>
 </div>
 
 <section id="properties">
-<h2 class="section-title">Exclusive Properties</h2>
-<p class="section-subtitle">Explore handpicked properties across Nepal.</p>
+<div class="heading">
+<h2>Exclusive Properties</h2>
+<p class="muted">Discover your next extraordinary home</p>
+</div>
 
 <div class="filters">
-<input id="search" placeholder="Search property name..." oninput="filterProperties()">
-
-<select id="locationFilter" onchange="filterProperties()">
+<input id="search" placeholder="Search property or location..." oninput="render()">
+<select id="location" onchange="render()">
 <option value="">All Locations</option>
 <option>Kathmandu</option>
 <option>Pokhara</option>
-<option>Lalitpur</option>
-<option>Bhaktapur</option>
 <option>Chitwan</option>
+<option>Lalitpur</option>
 </select>
-
-<input id="minPrice" type="number" min="0" placeholder="Minimum price (NPR)" oninput="filterProperties()">
-<input id="maxPrice" type="number" min="0" placeholder="Maximum price (NPR)" oninput="filterProperties()">
-
-<select id="sort" onchange="filterProperties()">
-<option value="default">Sort Properties</option>
+<input id="min" type="number" placeholder="Min price (Rs)" oninput="render()">
+<input id="max" type="number" placeholder="Max price (Rs)" oninput="render()">
+<select id="sort" onchange="render()">
+<option value="">Sort by</option>
 <option value="low">Price: Low to High</option>
 <option value="high">Price: High to Low</option>
 </select>
 </div>
 
-<div class="results-line" id="resultCount"></div>
 <div class="grid" id="propertyGrid"></div>
-<div class="empty" id="emptyState">No properties found. Try another search.</div>
+<p id="empty" style="display:none;text-align:center;padding:30px;color:#aaa">No properties found.</p>
 </section>
 
 <section class="about" id="about">
-<div class="about-inner">
-<h2 class="section-title">About Elite Estates</h2>
-<p>Elite Estates is a premium real estate showcase designed to help people discover beautiful homes, modern apartments, luxury villas and investment properties across Nepal.</p>
-<p>Our goal is to make your property search simple, transparent and convenient.</p>
-<div class="stats">
-<div class="stat"><strong>6+</strong>Featured Listings</div>
-<div class="stat"><strong>5</strong>Locations</div>
-<div class="stat"><strong>24/7</strong>Online Inquiry</div>
-</div>
-</div>
+<div class="heading"><h2>About Elite Estates</h2></div>
+<p>Elite Estates brings you premium properties, luxury residences and exceptional real estate opportunities across Nepal. Our goal is to help you find a place you proudly call home.</p>
 </section>
 
 <section id="contact">
-<h2 class="section-title">Get In Touch</h2>
-<p class="section-subtitle">Have a property question? Send us an inquiry.</p>
-<div class="contact-grid">
-<div class="contact-info">
-<h3 style="color:#d5b46b">Elite Estates</h3>
-<p>Premium Real Estate Services</p>
-<p>Location: Nepal</p>
-<p>WhatsApp: Contact us directly through the inquiry button.</p>
-<a class="btn" id="contactWhatsApp" href="#" target="_blank">WhatsApp Us</a>
+<div class="heading">
+<h2>Get In Touch</h2>
+<p class="muted">Let's find your perfect property</p>
 </div>
-<form class="contact-form" onsubmit="sendContact(event)">
-<input id="visitorName" placeholder="Your Name" required>
-<input id="visitorPhone" type="tel" placeholder="Your Phone Number" required>
-<input id="visitorEmail" type="email" placeholder="Your Email (optional)">
-<textarea id="visitorMessage" placeholder="Your Message" required></textarea>
-<button class="btn" type="submit">Send Inquiry</button>
-</form>
+<div class="contact">
+<input id="clientName" placeholder="Your Name">
+<input id="clientPhone" placeholder="Your Phone Number">
+<textarea id="clientMessage" rows="4" placeholder="Tell us what property you are looking for..."></textarea>
+<button class="btn" style="width:100%" onclick="sendContact()">Send WhatsApp Inquiry</button>
 </div>
 </section>
-</main>
 
 <footer>
-<strong>ELITE ESTATES</strong><br>
-Luxury Real Estate Nepal<br>
-© 2026 Elite Estates. All Rights Reserved.
+<p>© 2026 Elite Estates. All Rights Reserved.</p>
+<p style="margin-top:8px">Luxury Living. Exceptional Properties.</p>
 </footer>
 
-<div class="modal" id="detailsModal" onclick="outsideClose(event)">
+<div class="modal" id="detailsModal" onclick="if(event.target===this)closeDetails()">
 <div class="modal-box">
-<div class="modal-gallery">
-<img id="galleryImage" src="" alt="Property photo">
+<div class="modal-top">
+<h2 id="dName" style="color:var(--gold)"></h2>
+<button class="close" onclick="closeDetails()">×</button>
+</div>
+<img id="dImage" src="" alt="Property photo">
 <div class="gallery-controls">
-<button class="outline" onclick="changePhoto(-1)">Previous Photo</button>
-<button class="outline" onclick="changePhoto(1)">Next Photo</button>
+<button class="btn dark" onclick="changePhoto(-1)">Previous Photo</button>
+<button class="btn dark" onclick="changePhoto(1)">Next Photo</button>
 </div>
-</div>
-<div class="modal-content">
-<h2 id="detailName"></h2>
-<p id="detailLocation"></p>
-<h2 id="detailPrice"></h2>
-<div class="detail-meta" id="detailMeta"></div>
-<p id="detailDescription"></p>
-<div class="modal-actions">
-<a id="detailWhatsApp" class="btn" href="#" target="_blank">WhatsApp Inquiry</a>
-<button class="close-btn" onclick="closeDetails()">Close</button>
-</div>
-</div>
+<h3 id="dPrice" class="price"></h3>
+<p id="dLocation" class="muted"></p>
+<p id="dInfo" style="line-height:1.8;margin:15px 0"></p>
+<p id="dFeatures" style="color:var(--gold);margin-bottom:18px"></p>
+<button class="btn" style="width:100%" onclick="inquireCurrent()">WhatsApp Inquiry</button>
 </div>
 </div>
 
 <script>
-/* Add your business WhatsApp number here.
-   Format: country code + number, without + or spaces. */
-const WHATSAPP_NUMBER = "977XXXXXXXXXX";
+const WHATSAPP_NUMBER = "9779842944592";
 
 const properties = [
 {
-id:1,name:"Luxury Villa",location:"Kathmandu",price:35000000,
-label:"Luxury Villa",beds:5,baths:4,area:"4,500 sq.ft.",
-description:"A spacious luxury villa with elegant architecture, beautiful interiors and premium living spaces.",
+id:1,name:"Royal Luxury Villa",location:"Kathmandu",price:85000000,
+beds:5,baths:4,area:"4,500 sq.ft",
+description:"A beautiful luxury villa featuring elegant interiors, spacious rooms, modern facilities and a peaceful environment.",
 photos:[
 "https://images.unsplash.com/photo-1613490493576-7fde63acd811?w=1000",
-"https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=1000",
-"https://images.unsplash.com/photo-1600566753086-00f18fb6b3ea?w=1000"
-]
-},
-{
-id:2,name:"Modern Apartment",location:"Pokhara",price:12000000,
-label:"Modern Apartment",beds:3,baths:2,area:"1,800 sq.ft.",
-description:"A modern apartment with stylish interiors and comfortable living spaces in beautiful Pokhara.",
-photos:[
 "https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?w=1000",
 "https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=1000"
 ]
 },
 {
-id:3,name:"Premium House",location:"Lalitpur",price:8500000,
-label:"Premium House",beds:4,baths:3,area:"2,200 sq.ft.",
-description:"A premium family home with practical layouts, spacious rooms and a welcoming atmosphere.",
+id:2,name:"Modern Premium Apartment",location:"Lalitpur",price:18500000,
+beds:3,baths:2,area:"1,800 sq.ft",
+description:"Modern apartment with stylish interiors, comfortable bedrooms and convenient city access.",
 photos:[
-"https://images.unsplash.com/photo-1600566753086-00f18fb6b3ea?w=1000",
-"https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?w=1000"
+"https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=1000",
+"https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?w=1000"
 ]
 },
 {
-id:4,name:"Contemporary Residence",location:"Bhaktapur",price:18000000,
-label:"Contemporary",beds:4,baths:3,area:"2,700 sq.ft.",
-description:"A contemporary residence combining timeless design with modern comfort.",
+id:3,name:"Private Pool Residence",location:"Pokhara",price:65000000,
+beds:4,baths:4,area:"3,800 sq.ft",
+description:"An elegant residence with a beautiful pool, relaxing outdoor space and stunning surroundings.",
 photos:[
-"https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=1000",
-"https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=1000"
+"https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?w=1000",
+"https://images.unsplash.com/photo-1600566753086-00f18fb6b3ea?w=1000"
 ]
 },
 {
-id:5,name:"Elegant Family Home",location:"Chitwan",price:9500000,
-label:"Family Home",beds:4,baths:2,area:"2,000 sq.ft.",
-description:"A comfortable family home with attractive design and plenty of space.",
+id:4,name:"Contemporary Family Home",location:"Chitwan",price:24000000,
+beds:4,baths:3,area:"2,600 sq.ft",
+description:"A spacious family home with contemporary architecture and comfortable living spaces.",
 photos:[
 "https://images.unsplash.com/photo-1600047509807-ba8f99d2cdde?w=1000",
-"https://images.unsplash.com/photo-1600566753086-00f18fb6b3ea?w=1000"
+"https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?w=1000"
 ]
 },
 {
-id:6,name:"Executive Luxury Home",location:"Kathmandu",price:48000000,
-label:"Premium Listing",beds:6,baths:5,area:"5,200 sq.ft.",
-description:"An impressive executive residence with generous living areas and refined architectural details.",
+id:5,name:"Elegant City Mansion",location:"Kathmandu",price:110000000,
+beds:6,baths:5,area:"6,000 sq.ft",
+description:"An exclusive mansion designed for luxury living, privacy and entertaining guests.",
 photos:[
-"https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?w=1000",
-"https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=1000"
+"https://images.unsplash.com/photo-1600607687644-c7171b42498f?w=1000",
+"https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=1000"
+]
+},
+{
+id:6,name:"Luxury Hillside Home",location:"Pokhara",price:42000000,
+beds:4,baths:3,area:"3,200 sq.ft",
+description:"A peaceful hillside home offering spacious living and a beautiful natural setting.",
+photos:[
+"https://images.unsplash.com/photo-1600047509358-9dc75507daeb?w=1000",
+"https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?w=1000"
 ]
 }
 ];
 
-let activeProperty=null;
-let activePhoto=0;
+let currentProperty=null;
+let photoIndex=0;
 let favorites=JSON.parse(localStorage.getItem("eliteFavorites")||"[]");
 
-function money(value){
-return "NPR "+(value/10000000).toFixed(2)+" Crore";
+function money(n){
+return "Rs. "+n.toLocaleString("en-IN");
 }
 
-function whatsappLink(message){
-return "https://wa.me/"+WHATSAPP_NUMBER+"?text="+encodeURIComponent(message);
-}
-
-function renderProperties(list){
-const grid=document.getElementById("propertyGrid");
-grid.innerHTML="";
-
-list.forEach(property=>{
-const isFavorite=favorites.includes(property.id);
-const card=document.createElement("article");
-card.className="card";
-card.innerHTML=`
-<div class="card-photo">
-<img src="${property.photos[0]}" alt="${property.name}" loading="lazy">
-<span class="tag">${property.label}</span>
-<button class="favorite ${isFavorite?"active":""}" aria-label="Save favorite" onclick="toggleFavorite(${property.id})">${isFavorite?"♥":"♡"}</button>
-</div>
-<div class="card-content">
-<h3>${property.name}</h3>
-<div class="location">📍 ${property.location}, Nepal</div>
-<div class="price">${money(property.price)}</div>
-<div class="meta">
-<span>🛏 ${property.beds} Beds</span>
-<span>🛁 ${property.baths} Baths</span>
-<span>📐 ${property.area}</span>
-</div>
-<div class="card-actions">
-<button class="gold-button" onclick="openDetails(${property.id})">View Details</button>
-<button class="outline" onclick="quickInquiry(${property.id})">Inquire</button>
-</div>
-</div>`;
-grid.appendChild(card);
-});
-document.getElementById("resultCount").textContent=list.length+" properties found";
-document.getElementById("emptyState").style.display=list.length?"none":"block";
-}
-
-function filterProperties(){
-const search=document.getElementById("search").value.toLowerCase();
-const location=document.getElementById("locationFilter").value;
-const min=Number(document.getElementById("minPrice").value)||0;
-const max=Number(document.getElementById("maxPrice").value)||Infinity;
+function render(){
+let list=[...properties];
+const q=document.getElementById("search").value.toLowerCase();
+const loc=document.getElementById("location").value;
+const min=Number(document.getElementById("min").value)||0;
+const max=Number(document.getElementById("max").value)||Infinity;
 const sort=document.getElementById("sort").value;
 
-let list=properties.filter(p=>
-(p.name.toLowerCase().includes(search)||p.location.toLowerCase().includes(search))&&
-(!location||p.location===location)&&
-p.price>=min&&p.price<=max
+list=list.filter(p=>
+(p.name.toLowerCase().includes(q)||p.location.toLowerCase().includes(q)) &&
+(!loc||p.location===loc) &&
+p.price>=min && p.price<=max
 );
 
 if(sort==="low")list.sort((a,b)=>a.price-b.price);
 if(sort==="high")list.sort((a,b)=>b.price-a.price);
 
-renderProperties(list);
+document.getElementById("empty").style.display=list.length?"none":"block";
+
+document.getElementById("propertyGrid").innerHTML=list.map(p=>`
+<div class="card">
+<img src="${p.photos[0]}" alt="${p.name}" loading="lazy">
+<div class="card-body">
+<h3>${p.name}</h3>
+<p class="muted">${p.location} • ${p.area}</p>
+<div class="price">${money(p.price)}</div>
+<div class="actions">
+<button class="btn" onclick="showDetails(${p.id})">View Details</button>
+<button class="heart ${favorites.includes(p.id)?"active":""}" onclick="toggleFavorite(${p.id})">${favorites.includes(p.id)?"♥":"♡"}</button>
+<button class="btn dark" onclick="whatsappProperty(${p.id})">WhatsApp</button>
+</div>
+</div>
+</div>`).join("");
 }
 
-function openDetails(id){
-activeProperty=properties.find(p=>p.id===id);
-activePhoto=0;
-if(!activeProperty)return;
-
-document.getElementById("detailName").textContent=activeProperty.name;
-document.getElementById("detailLocation").textContent="📍 "+activeProperty.location+", Nepal";
-document.getElementById("detailPrice").textContent=money(activeProperty.price);
-document.getElementById("detailDescription").textContent=activeProperty.description;
-document.getElementById("detailMeta").innerHTML=`
-<span>🛏 ${activeProperty.beds} Bedrooms</span>
-<span>🛁 ${activeProperty.baths} Bathrooms</span>
-<span>📐 ${activeProperty.area}</span>
-`;
-updateGallery();
-
-document.getElementById("detailWhatsApp").href=whatsappLink(
-"Hello Elite Estates! I am interested in "+activeProperty.name+" in "+activeProperty.location+". Please provide more details."
-);
-document.getElementById("detailsModal").style.display="flex";
-document.body.style.overflow="hidden";
+function toggleFavorite(id){
+favorites=favorites.includes(id)?favorites.filter(x=>x!==id):[...favorites,id];
+localStorage.setItem("eliteFavorites",JSON.stringify(favorites));
+render();
 }
 
-function updateGallery(){
-document.getElementById("galleryImage").src=activeProperty.photos[activePhoto];
+function showDetails(id){
+currentProperty=properties.find(p=>p.id===id);
+photoIndex=0;
+document.getElementById("dName").textContent=currentProperty.name;
+document.getElementById("dPrice").textContent=money(currentProperty.price);
+document.getElementById("dLocation").textContent=currentProperty.location;
+document.getElementById("dInfo").textContent=currentProperty.description;
+document.getElementById("dFeatures").textContent=
+currentProperty.beds+" Bedrooms • "+currentProperty.baths+" Bathrooms • "+currentProperty.area;
+updatePhoto();
+document.getElementById("detailsModal").style.display="block";
+}
+
+function updatePhoto(){
+document.getElementById("dImage").src=currentProperty.photos[photoIndex];
 }
 
 function changePhoto(direction){
-if(!activeProperty)return;
-activePhoto=(activePhoto+direction+activeProperty.photos.length)%activeProperty.photos.length;
-updateGallery();
+photoIndex=(photoIndex+direction+currentProperty.photos.length)%currentProperty.photos.length;
+updatePhoto();
 }
 
 function closeDetails(){
 document.getElementById("detailsModal").style.display="none";
-document.body.style.overflow="";
 }
 
-function outsideClose(event){
-if(event.target.id==="detailsModal")closeDetails();
+function openWhatsApp(message){
+const url="https://wa.me/"+WHATSAPP_NUMBER+"?text="+encodeURIComponent(message);
+window.open(url,"_blank");
 }
 
-function toggleFavorite(id){
-if(favorites.includes(id)){
-favorites=favorites.filter(x=>x!==id);
-}else{
-favorites.push(id);
-}
-localStorage.setItem("eliteFavorites",JSON.stringify(favorites));
-filterProperties();
-}
-
-function quickInquiry(id){
+function whatsappProperty(id){
 const p=properties.find(x=>x.id===id);
-window.open(whatsappLink("Hello Elite Estates! I am interested in "+p.name+". Please contact me."),"_blank");
+openWhatsApp("Hello Elite Estates! I am interested in "+p.name+" in "+p.location+". Price: "+money(p.price)+". Please provide more details.");
 }
 
-function sendContact(event){
-event.preventDefault();
-const name=document.getElementById("visitorName").value;
-const phone=document.getElementById("visitorPhone").value;
-const email=document.getElementById("visitorEmail").value;
-const message=document.getElementById("visitorMessage").value;
-
-const text="Hello Elite Estates!%0AName: "+encodeURIComponent(name)+
-"%0APhone: "+encodeURIComponent(phone)+
-"%0AEmail: "+encodeURIComponent(email)+
-"%0AMessage: "+encodeURIComponent(message);
-
-window.open("https://wa.me/"+WHATSAPP_NUMBER+"?text="+text,"_blank");
+function inquireCurrent(){
+if(currentProperty)whatsappProperty(currentProperty.id);
 }
 
-document.getElementById("contactWhatsApp").href=whatsappLink("Hello Elite Estates! I would like to know more about your properties.");
+function sendContact(){
+const name=document.getElementById("clientName").value.trim();
+const phone=document.getElementById("clientPhone").value.trim();
+const message=document.getElementById("clientMessage").value.trim();
+if(!name||!phone||!message){
+alert("Please fill in your name, phone number and message.");
+return;
+}
+openWhatsApp("Hello Elite Estates!\nName: "+name+"\nPhone: "+phone+"\nMessage: "+message);
+}
 
-renderProperties(properties);
+render();
 </script>
 </body>
 </html>
